@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 questionPlaceholder.classList.add('hidden');
                 questionContainer.classList.remove('hidden');
+                document.getElementById('answer-box').focus();
             }
         });
 
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function runGame(gameType) {
 
     document.getElementById('answer-box').value = '';
+    document.getElementById('answer-box').focus();
 
     let num1 = getRandomValue(maxVal);
     let num2 = getRandomValue(maxVal);
