@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add click event listener to each button
         button.addEventListener('click', function() {
-            if (this.getAttribute('data-type') === 'submit') alert('You clicked submit!');
+            if (this.getAttribute('data-type') === 'submit') checkAnswer();
 
             else {
                 let gameType = this.getAttribute('data-type');
@@ -23,22 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 questionPlaceholder.classList.add('hidden');
                 questionContainer.classList.remove('hidden');
             }
-            
         });
 
         // Populate btn-text with date from data-type attribute
         button.nextElementSibling.textContent = button.getAttribute('data-type');
     }
-
-
-
-
-    // Wait for the user to init a game mode by click
-    //Hide placeholder prompt
-    //Show the question-area div
-    //then
-    //runGame('UserInput);
-
 });
 
 
@@ -82,19 +71,54 @@ function getRandomValue(max) {
 
 //Logic Functions
 
-function checkAnswer() {
+/**
+ * Gets the operands and the operator from the DOM and returns the correct answer.
+ */
+function calculateCorrectAnswer() {
+    let op1 = parseInt(document.getElementById('operand1').innerText);
+    let op2 = parseInt(document.getElementById('operand2').innerText);
+    let operator = document.getElementById('operator').innerText;
 
+    switch(operator) {
+        case '+':
+            return [op1 + op2, 'addition'];
+        case '-':
+            return [op1 - op2, 'subtract'];
+        case 'x':
+            return [op1 * op2, 'multiply'];
+        case '÷':
+            return [(op1 / op2).toFixed(1), 'division'];
+        default:
+            alert(`Unimplemented operator: ${operator}`);
+            throw `Unimplemented operator: ${operator}. Aborting!`;
+    }
 }
 
-function calculateCorrectAnswer() {
+function checkAnswer() {
+    let userAnswer = parseFloat(document.getElementById('answer-box').value);
+    let correctAnswer = parseFloat(calculateCorrectAnswer()[0]);
+    let isCorrect = userAnswer === correctAnswer;
+
+    if(isCorrect) {
+        alert('You got it right! :D');
+    }
+    else {
+        alert(`You got it wrong! D: The correct answer was ${correctAnswer}`);
+    }
+
+    runGame(calculateCorrectAnswer()[1]);
 }
 
 //Score Handling Functions
 
-function incrementScore() {
-}
+function calcScore() {
+    if (checkAnswer) {
 
-function incrementWrongAnswer() {
+    }
+    
+    else if (!checkAnswer) {
+        
+    }
 }
 
 //Question Functions
