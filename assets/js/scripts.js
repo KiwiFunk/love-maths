@@ -117,15 +117,16 @@ function checkAnswer() {
     let isCorrect = userAnswer === correctAnswer;
 
     if(isCorrect) {
-        alert('You got it right! :D');
         calcScore(isCorrect);
+        document.getElementById('resultprompts').innerHTML = 'You got it <span class="correct">right</span>! :D';
     }
     else {
-        alert(`You got it wrong! D: The correct answer was ${correctAnswer}`);
         calcScore(isCorrect);
+        document.getElementById('resultprompts').innerHTML = `You got it <span class="incorrect">wrong</span>! D: The correct answer was ${correctAnswer}`;
     }
 
-    runGame(calculateCorrectAnswer()[1]);
+    //runGame(calculateCorrectAnswer()[1]);
+    setTimeout(() => runGame(calculateCorrectAnswer()[1]), 1500);
 }
 
 //Score Handling Functions

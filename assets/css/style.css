@@ -40,8 +40,8 @@ header {
 }
 
 .logo {
-    height: 40px;
-    padding-right: 5px;
+    height: 45px;
+    padding: 0 5px;
     display: none;
 }
 
@@ -80,7 +80,7 @@ main {
 .question-area {
     font-size: 2rem;
     margin: auto;
-    padding: 30px 0;
+    padding: 20px 0;
 }
 
 .question-area span {
@@ -118,7 +118,7 @@ main {
     flex: 1 1 calc(50% - 20px); /* Adjust the flex basis to fit two items per row with margin */
 }
 
-.score {
+.score, .correct {
     color: green;
     font-weight: bold;
 }
@@ -144,6 +144,10 @@ main {
 .scores {
     display: inline-block;
     padding: 25px;
+}
+
+#resultprompts {
+    min-height: 20px;
 }
 
 /* Buttons */
