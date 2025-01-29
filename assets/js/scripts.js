@@ -132,9 +132,13 @@ function displayAdditionQuestion(op1, op2) {
 }
 
 function displaySubtractQuestion(op1, op2) {
+    // Ensure op1 is always larger than op2 to avoid negative numbers
+    let larger = Math.max(op1, op2);
+    let smaller = Math.min(op1, op2);
+    
     document.getElementById('operator').textContent = '-'
-    document.getElementById('operand1').textContent = op1;
-    document.getElementById('operand2').textContent = op2;
+    document.getElementById('operand1').textContent = larger;
+    document.getElementById('operand2').textContent = smaller;
 }
 
 function displayMultiplyQuestion(op1, op2) {
