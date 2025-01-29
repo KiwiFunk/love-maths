@@ -1,12 +1,29 @@
 //Wait for DOM Content to load before executing game JS
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Populate btn-text with date from data-type attribute
+    
     const buttons = document.querySelectorAll('.btn');
-    buttons.forEach(button => {
-        const btnText = button.nextElementSibling;
-        btnText.textContent = button.getAttribute('data-type');
-    });
+    for (let button of buttons) {
+
+        // Add click event listener to each button
+        button.addEventListener('click', function() {
+            if (this.getAttribute('data-type') === 'submit') alert('You clicked submit!');
+
+            else {
+                let gameType = this.getAttribute('data-type');
+                alert(`You clicked ${gameType}`);
+            }
+            
+        });
+
+        // Populate btn-text with date from data-type attribute
+        button.nextElementSibling.textContent = button.getAttribute('data-type');
+    }
+
+
+
+
+
 
     function runGame() {
 
