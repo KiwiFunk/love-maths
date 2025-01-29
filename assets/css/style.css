@@ -10,14 +10,25 @@
 
 
 /* Global Styles */
-body {
+html, body {
     background-color: white;
     font-family: "Raleway", sans-serif;
     color: var(--alt-color);
     text-align: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 /* Header */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the contents horizontally */
+    padding: 10px;
+    gap: 10px;
+}
 
 .heading {
     text-align: center;
@@ -27,42 +38,67 @@ body {
 .logo {
     height: 40px;
     padding-right: 5px;
+    display: none;
 }
 
 /* Main */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
 
 .game-area {
     background-color: #E6ECF0;
-    box-sizing: border-box;
     width: 85%;
-    height: 65vh;
-    max-height: 450px;
-    max-width: 830px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1%;
+    padding: 20px;
+    border-radius: 20px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 }
 
 .question-area {
-    width: 50%;
     font-size: 2rem;
     margin: auto;
-    padding: 50px 0;
+    padding: 30px 0;
 }
 
 .question-area span {
     padding: 0 15px;
 }
 
+.question-area input {
+    border-radius: 10px;
+}
 .score-area {
     margin: 5px auto;
-    width: 60%;
     font-size: 1.2rem;
 }
 
+.score-area p {
+    margin: 0;
+    padding: 25px;
+}
+
 .controls-area {
-    width: 85%;
+    width: 90%;
     margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to create a grid */
+    justify-content: center; /* Center items horizontally */
+}
+
+.btn-container {
+    margin: 10px;
+    min-width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 calc(50% - 20px); /* Adjust the flex basis to fit two items per row with margin */
 }
 
 .score {
@@ -105,6 +141,13 @@ body {
     color: white;
 }
 
+.btn-text {
+    margin-top: 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--alt-color);
+}
+
 .btn:focus {
     outline: none;
 }
@@ -119,15 +162,6 @@ body {
     font-size: 3.2rem;
     margin: 0 30px;
     transition: all 0.5s;
-}
-
-.btn-big::after {
-    content: attr(data-type);
-    font-size: 1rem;
-    color: var(--alt-color);
-    position: relative;
-    left: -0.5em;
-    
 }
 
 .btn-blue {
@@ -186,78 +220,20 @@ body {
     background-color: #0d1013;
 }
 
+
 /* Media queries */
-
-@media (max-width: 414px) {
+@media (min-width: 768px) {
     .controls-area {
-        width: 100%;
+        flex-flow: row nowrap; /* Display the buttons in a single row on larger screens */
     }
 
-    .btn-big {
-        margin: 0 10px;
-        padding: 5px;
-        border: 5px solid;
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
+    .btn-container {
+        flex: 1 1 220px; /* Allow the container to grow and shrink */
+        max-width: 220px; /* Ensure the container doesn't exceed the button width */
     }
 
-    .btn-big::after {
-        font-size: 0.6rem;
-        left: -0.7rem;
+    .logo {
+        display: inline-flex;
     }
-
-    .question-area {
-        padding: 10% 0;
-        width: 100%;
-    }
-
-    .question-area span {
-        padding: 0;
-    }
-
-    .answer-message {
-        display: block;
-    }
-
-    #answer-box {
-        display: block;
-        margin: 0 auto;
-    }
-    .btn-grey {
-        margin-top: 0;
-    }
-
-    .score-area {
-        width: 100%;
-    }
-
-    .scores {
-        margin: 0.5em auto;
-        display: block;
-        padding: 5px;
-    }
-
-    .heading {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 320px) {
-    .game-area {
-        height: 70vh;
-    }
-
-    .controls-area {
-        width: 75%;
-        margin: 10px auto;
-    }
-
-    .btn-big {
-        margin: 10px 10px;
-    }
-    .question-area {
-        padding: 10px 0;
-    }
-
+    
 }

@@ -11,20 +11,29 @@
 </head>
 <body>
     <header>
-        <h1 class="'heading">
-            <img src="assets/images/logo.png" alt="The Love Maths Logo" class="logo">
-            Love Maths
-        </h1>
-        
+        <img src="assets/images/logo.png" alt="The Love Maths Logo" class="logo">
+        <h1 class="heading">Love Maths</h1>
     </header>
 
     <main>
         <div class="game-area">
             <div class="controls-area">
-                <button data-type="addition" class="btn btn-big btn-green"><i class="fas fa-plus"></i></button>
-                <button data-type="subtract" class="btn btn-big btn-blue"><i class="fas fa-minus"></i></button>
-                <button data-type="multiply" class="btn btn-big btn-orange"><i class="fas fa-times"></i></button>
-                <button data-type="division" class="btn btn-big btn-red"><i class="fas fa-divide"></i></button>
+                <div class="btn-container">
+                    <button data-type="addition" class="btn btn-big btn-green"><i class="fas fa-plus"></i></button>
+                    <div class="btn-text"></div>
+                </div>
+                <div class="btn-container">
+                    <button data-type="subtract" class="btn btn-big btn-blue"><i class="fas fa-minus"></i></button>
+                    <div class="btn-text"></div>
+                </div>
+                <div class="btn-container">
+                    <button data-type="multiply" class="btn btn-big btn-orange"><i class="fas fa-times"></i></button>
+                    <div class="btn-text"></div>
+                </div>
+                <div class="btn-container">
+                    <button data-type="division" class="btn btn-big btn-red"><i class="fas fa-divide"></i></button>
+                    <div class="btn-text"></div>
+                </div>
             </div>
             <div class="question-area">
                 <span id="operand1">0</span>
@@ -42,8 +51,6 @@
         <div class="score-area">
             <p class="scores">Correct Answers <span class="score">0</span></p>
             <p class="scores">Incorrect Answers <span class="incorrect">0</span></p>
-
-
         </div>
     </main>
 
