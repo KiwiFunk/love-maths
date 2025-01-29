@@ -149,6 +149,13 @@ function calcScore(correct) {
     }
 }
 
+function scoreboard() {
+    //Use the value from the timer to walk through if else if loops to determine score
+    //1000,100,10,1
+    //Add score to a value displayed in html
+    //Total Score: 000000. Display under correct and incorrect
+}
+
 //Question Functions
 function displayAdditionQuestion(op1, op2) {
     document.getElementById('operator').textContent = '+'

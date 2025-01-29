@@ -91,13 +91,23 @@ main {
     border-radius: 10px;
 }
 .score-area {
-    margin: 5px 0;
+    margin: 4px 0;
     font-size: 1.2rem;
 }
 
 .score-area p {
     margin: 0;
-    padding: 25px;
+    padding: 18px 28px;
+}
+
+#scoreboard {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+#scoreboard .total-score {
+    font-weight: 500;
 }
 
 .controls-area {
