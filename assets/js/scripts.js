@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
 //Main game loop
 function runGame(gameType) {
 
+    document.getElementById('answer-box').value = '';
+
     let num1 = getRandomValue(maxVal);
     let num2 = getRandomValue(maxVal);
 
