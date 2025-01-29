@@ -62,7 +62,7 @@ function runGame(gameType) {
             displayMultiplyQuestion(num1, num2);
             break;
 
-        case 'divide':
+        case 'division':
             displayDivideQuestion(num1, num2);
             break;
 
@@ -98,15 +98,26 @@ function incrementWrongAnswer() {
 }
 
 //Question Functions
-
-function displayAdditionQuestion() {
+function displayAdditionQuestion(op1, op2) {
+    document.getElementById('operator').textContent = '+'
+    document.getElementById('operand1').textContent = op1;
+    document.getElementById('operand2').textContent = op2;
 }
 
-function displaySubtractQuestion() {
+function displaySubtractQuestion(op1, op2) {
+    document.getElementById('operator').textContent = '-'
+    document.getElementById('operand1').textContent = op1;
+    document.getElementById('operand2').textContent = op2;
 }
 
-function displayMultiplyQuestion() {
+function displayMultiplyQuestion(op1, op2) {
+    document.getElementById('operator').textContent = 'x'
+    document.getElementById('operand1').textContent = op1;
+    document.getElementById('operand2').textContent = op2;
 }
 
-function displayDivideQuestion() {
+function displayDivideQuestion(op1, op2) {
+    document.getElementById('operator').textContent = '÷'
+    document.getElementById('operand1').textContent = op1;
+    document.getElementById('operand2').textContent = op2;
 }
