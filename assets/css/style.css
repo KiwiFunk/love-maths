@@ -54,11 +54,11 @@ main {
 
 .game-area {
     background-color: #E6ECF0;
-    width: 85%;
+    width: 75%;
     padding: 20px;
     border-radius: 20px;
     max-width: 1200px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 
     display: flex;
     flex-flow: column nowrap;
