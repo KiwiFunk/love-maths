@@ -49,6 +49,7 @@ function runGame(gameType) {
 
     document.getElementById('answer-box').value = '';
     document.getElementById('answer-box').focus();
+    document.getElementById('resultprompts').innerHTML = '';
 
     let num1 = getRandomValue(maxVal);
     let num2 = getRandomValue(maxVal);
@@ -167,4 +168,5 @@ function displayDivideQuestion(op1, op2) {
     document.getElementById('operator').textContent = '÷'
     document.getElementById("operand1").textContent = op1 > op2 ? op1 : op2;
     document.getElementById("operand2").textContent = op1 > op2 ? op2 : op1;
+    document.getElementById('resultprompts').innerHTML = 'Round to 1 decimal place';
 }
