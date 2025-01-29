@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             else {
                 let gameType = this.getAttribute('data-type');
-                alert(`You clicked ${gameType}`);
+                runGame(gameType);
 
                 questionPlaceholder.classList.add('hidden');
                 questionContainer.classList.remove('hidden');
@@ -43,10 +43,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 //Main game loop
-function runGame() {
+function runGame(gameType) {
 
     let num1 = getRandomValue(maxVal);
     let num2 = getRandomValue(maxVal);
+
+    switch(gameType) {
+
+        case 'addition':
+            displayAdditionQuestion(num1, num2);
+            break;
+
+        case 'subtract':
+            displaySubtractQuestion(num1, num2);
+            break;
+
+        case 'multiply':
+            displayMultiplyQuestion(num1, num2);
+            break;
+
+        case 'divide':
+            displayDivideQuestion(num1, num2);
+            break;
+
+        default:
+            alert(`Unknown game type: ${gameType}`);
+            throw `Unknown game type: ${gameType}. Aborting!`;
+
+    }
 
 }
 
@@ -55,6 +79,9 @@ function getRandomValue(max) {
     return Math.floor(Math.random() * max) + 1;
 }
 
+
+//Logic Functions
+
 function checkAnswer() {
 
 }
@@ -62,7 +89,7 @@ function checkAnswer() {
 function calculateCorrectAnswer() {
 }
 
-
+//Score Handling Functions
 
 function incrementScore() {
 }
@@ -70,7 +97,7 @@ function incrementScore() {
 function incrementWrongAnswer() {
 }
 
-
+//Question Functions
 
 function displayAdditionQuestion() {
 }
