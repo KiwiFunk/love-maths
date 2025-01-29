@@ -46,7 +46,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
 }
 
 .game-area {
@@ -75,7 +74,7 @@ main {
     border-radius: 10px;
 }
 .score-area {
-    margin: 5px auto;
+    margin-top: 25px;
     font-size: 1.2rem;
 }
 
