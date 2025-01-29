@@ -4,6 +4,10 @@ let maxVal = 25;
 
 //Wait for DOM Content to load before executing game JS
 document.addEventListener('DOMContentLoaded', function() {
+
+
+    const questionPlaceholder = document.getElementById('question-placeholder');
+    const questionContainer = document.getElementById('question-container');
     
     const buttons = document.querySelectorAll('.btn');
     for (let button of buttons) {
@@ -15,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
             else {
                 let gameType = this.getAttribute('data-type');
                 alert(`You clicked ${gameType}`);
+
             }
             
         });
@@ -22,6 +27,15 @@ document.addEventListener('DOMContentLoaded', function() {
         // Populate btn-text with date from data-type attribute
         button.nextElementSibling.textContent = button.getAttribute('data-type');
     }
+
+
+
+
+    // Wait for the user to init a game mode by click
+    //Hide placeholder prompt
+    //Show the question-area div
+    //then
+    //runGame('UserInput);
 
 });
 

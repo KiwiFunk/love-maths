@@ -35,16 +35,21 @@
                     <div class="btn-text"></div>
                 </div>
             </div>
-            <div class="question-area">
-                <span id="operand1">0</span>
-                <span id="operator">x</span>
-                <span id="operand2">0</span>
-                <span>=</span>
-                <p class="answer-message">Enter Answer:</p>
-                <input type="number" id="answer-box">
+            <div id="question-placeholder">
+                <p>Please select a game mode to start!</p>
             </div>
-            <!-- Use a button here as we don't want to actually submit a form, just a value to client side JS -->
-            <button data-type="submit" class="btn btn-grey">Submit Answer</button>
+            <div id="question-container">
+                <div class="question-area">
+                    <span id="operand1">0</span>
+                    <span id="operator">x</span>
+                    <span id="operand2">0</span>
+                    <span>=</span>
+                    <p class="answer-message">Enter Answer:</p>
+                    <input type="number" id="answer-box">
+                </div>
+                <!-- Use a button here as we don't want to actually submit a form, just a value to client side JS -->
+                <button data-type="submit" class="btn btn-grey">Submit Answer</button>
+            </div>
 
         </div>
 

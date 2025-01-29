@@ -60,6 +60,19 @@ main {
     align-items: center;
 }
 
+#question-placeholder {
+    /* Prompt user input, hide with JS once gamemode selected */
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 20px;
+}
+    
+
+#question-container {
+    /* Hide Until user has selected a game mode */
+    display:none;
+}
+
 .question-area {
     font-size: 2rem;
     margin: auto;
@@ -112,7 +125,6 @@ main {
 }
 
 .answer-message {
-    display: none;
     font-size: 1rem;
 }
 
@@ -222,6 +234,12 @@ main {
 
 
 /* Media queries */
+
+@media (min-width: 576px) {
+    .answer-message {
+        display: none;
+    }
+}
 @media (min-width: 768px) {
     .controls-area {
         flex-flow: row nowrap; /* Display the buttons in a single row on larger screens */
@@ -235,5 +253,5 @@ main {
     .logo {
         display: inline-flex;
     }
-    
+
 }
