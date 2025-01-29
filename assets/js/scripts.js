@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 let gameType = this.getAttribute('data-type');
                 alert(`You clicked ${gameType}`);
 
+                questionPlaceholder.classList.add('hidden');
+                questionContainer.classList.remove('hidden');
             }
             
         });
