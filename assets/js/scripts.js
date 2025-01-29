@@ -20,15 +20,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 let gameType = this.getAttribute('data-type');
                 runGame(gameType);
 
-                questionPlaceholder.classList.add('hidden');
-                questionContainer.classList.remove('hidden');
-                document.getElementById('answer-box').focus();
+                //Use if statement to make sure code is only exexuted on initial game start
+                if (questionContainer.classList.contains('hidden'))
+                {
+                    questionPlaceholder.classList.add('hidden');
+                    questionContainer.classList.remove('hidden');
+    
+                    document.getElementById('answer-box').addEventListener('keydown', function(e) {
+                        if (e.key === 'Enter') checkAnswer();
+                    });
+
+                    document.getElementById('answer-box').focus();
+                }
             }
         });
 
         // Populate btn-text with date from data-type attribute
         button.nextElementSibling.textContent = button.getAttribute('data-type');
     }
+
+    
+
 });
 
 
