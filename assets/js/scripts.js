@@ -101,23 +101,26 @@ function checkAnswer() {
 
     if(isCorrect) {
         alert('You got it right! :D');
+        calcScore(isCorrect);
     }
     else {
         alert(`You got it wrong! D: The correct answer was ${correctAnswer}`);
+        calcScore(isCorrect);
     }
 
     runGame(calculateCorrectAnswer()[1]);
 }
 
 //Score Handling Functions
-
-function calcScore() {
-    if (checkAnswer) {
-
+function calcScore(correct) {
+    let correctCount = document.querySelector('.score');
+    let incorrectCount = document.querySelector('.incorrect');
+    if (correct) {
+        correctCount.innerHTML = parseInt(correctCount.innerHTML) + 1;
     }
     
-    else if (!checkAnswer) {
-        
+    else {
+        incorrectCount.innerHTML = parseInt(incorrectCount.innerHTML) + 1;
     }
 }
 
