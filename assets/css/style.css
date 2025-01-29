@@ -91,7 +91,7 @@ main {
     border-radius: 10px;
 }
 .score-area {
-    margin-top: 25px;
+    margin: 5px 0;
     font-size: 1.2rem;
 }
 
@@ -148,6 +148,14 @@ main {
 
 #resultprompts {
     min-height: 20px;
+}
+
+#stopwatch-display {
+    margin-top: 40px;
+    padding: 10px;
+    color: var(--alt-color);
+    font-size: 2rem;
+    font-weight: 600;
 }
 
 /* Buttons */

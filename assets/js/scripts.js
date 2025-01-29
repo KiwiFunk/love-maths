@@ -2,6 +2,10 @@
 
 let maxVal = 25;
 
+//Stopwatch Global Variables
+let elapsedTime = 0;
+let timerInterval;
+
 //Wait for DOM Content to load before executing game JS
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -47,6 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
 //Main game loop
 function runGame(gameType) {
 
+    startStopwatch();
+
     document.getElementById('answer-box').value = '';
     document.getElementById('answer-box').focus();
     document.getElementById('resultprompts').innerHTML = '';
@@ -85,7 +91,6 @@ function getRandomValue(max) {
     return Math.floor(Math.random() * max) + 1;
 }
 
-
 //Logic Functions
 
 /**
@@ -112,6 +117,8 @@ function calculateCorrectAnswer() {
 }
 
 function checkAnswer() {
+    stopStopwatch();
+    
     let userAnswer = parseFloat(document.getElementById('answer-box').value);
     let correctAnswer = parseFloat(calculateCorrectAnswer()[0]);
     let isCorrect = userAnswer === correctAnswer;
@@ -170,4 +177,22 @@ function displayDivideQuestion(op1, op2) {
     document.getElementById("operand1").textContent = op1 > op2 ? op1 : op2;
     document.getElementById("operand2").textContent = op1 > op2 ? op2 : op1;
     document.getElementById('resultprompts').innerHTML = 'Round to 1 decimal place';
+}
+
+//Stopwatch Functions
+function startStopwatch() {
+    clearInterval(timerInterval); // Clear any existing interval
+    elapsedTime = 0; // Reset elapsed time
+    const stopwatchDisplay = document.getElementById('stopwatch-display');
+    stopwatchDisplay.textContent = elapsedTime.toFixed();
+
+    timerInterval = setInterval(function() {
+        elapsedTime += 0.01;
+        stopwatchDisplay.textContent = elapsedTime.toFixed(2);
+    }, 10); // Update every 10 milliseconds for 0.01 second increments
+}
+
+
+function stopStopwatch() {
+    clearInterval(timerInterval);
 }
