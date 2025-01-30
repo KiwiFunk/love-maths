@@ -206,7 +206,6 @@ main {
 }
 
 /* Buttons */
-
 .btn {
     width: 220px;
     height: 60px;
@@ -309,20 +308,20 @@ input[type="number"] {
 }
 
 /* Media queries */
-
 @media (min-width: 576px) {
     .answer-message {
         display: none;
     }
 }
 @media (min-width: 768px) {
+    /* Display the buttons in a single row on larger screens */
     .controls-area {
-        flex-flow: row nowrap; /* Display the buttons in a single row on larger screens */
+        flex-flow: row nowrap; 
     }
 
     .btn-container {
-        flex: 1 1 220px; /* Allow the container to grow and shrink */
-        max-width: 220px; /* Ensure the container doesn't exceed the button width */
+        flex: 1 1 220px;
+        max-width: 220px;
     }
 
     .logo {

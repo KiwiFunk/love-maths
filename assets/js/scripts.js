@@ -187,6 +187,12 @@ function displaySubtractQuestion(op1, op2) {
 }
 
 function displayMultiplyQuestion(op1, op2) {
+    if (op2 > 12) {
+        let value = op2;
+        value = Math.floor(value / 2);
+        op2 = value;
+    }
+
     document.getElementById('operator').textContent = 'x'
     document.getElementById('operand1').textContent = op1;
     document.getElementById('operand2').textContent = op2;
