@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-
 //Main game loop
 function runGame(gameType) {
 
@@ -217,7 +216,6 @@ function startStopwatch() {
         stopwatchDisplay.textContent = elapsedTime.toFixed(2);
     }, 10);                         // Update every 10 ms for 0.01 second increments
 }
-
 
 function stopStopwatch() {
     clearInterval(timerInterval);

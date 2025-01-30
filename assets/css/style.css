@@ -109,10 +109,6 @@ main {
     font-weight: 500;
     padding: 20px;
 }
-    
-#question-container {
-    /* Hide Until user has selected a game mode */
-}
 
 .question-area {
     font-size: 2rem;
