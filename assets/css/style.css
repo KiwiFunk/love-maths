@@ -6,12 +6,20 @@
 
 :root {
     --alt-color: #445361;
+    --background-color: white;
+    --element-color:#E6ECF0;
+}
+
+.darkmode {
+    --alt-color: white;
+    --background-color: #0d1013;
+    --element-color: #1c1f22;
 }
 
 
 /* Global Styles */
 html, body {
-    background-color: white;
+    background-color: var(--background-color);
     font-family: "Raleway", sans-serif;
     color: var(--alt-color);
     text-align: center;
@@ -45,6 +53,36 @@ header {
     display: none;
 }
 
+/* Dark Mode Switch */
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: var(--alt-color);
+    background-color: var(--element-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-switch i:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch i:first-child {
+    display: none;
+}
+.darkmode #theme-switch i:last-child {
+    display: block;
+}
+
 /* Main */
 main {
     display: flex;
@@ -53,7 +91,7 @@ main {
 }
 
 .game-area {
-    background-color: #E6ECF0;
+    background-color: var(--element-color);
     width: 75%;
     padding: 20px;
     border-radius: 20px;

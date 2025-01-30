@@ -1,6 +1,5 @@
 //Global Values
-
-let maxVal = 25;
+let maxVal = 25;                //Use difficulty setting to adjust this
 
 //Stopwatch Global Variables
 let elapsedTime = 0;
@@ -9,7 +8,14 @@ let timerInterval;
 //Wait for DOM Content to load before executing game JS
 document.addEventListener('DOMContentLoaded', function() {
 
+    //Theme Switch Functionality
+    const themeSwitch = document.getElementById('theme-switch');
+    themeSwitch.addEventListener('click', function() {
+        document.body.classList.toggle('darkmode');
+        document.getElementById('answer-box').focus();
+    });
 
+    //Assign required elements to variables
     const questionPlaceholder = document.getElementById('question-placeholder');
     const questionContainer = document.getElementById('question-container');
     
@@ -38,13 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
-
         // Populate btn-text with date from data-type attribute
         button.nextElementSibling.textContent = button.getAttribute('data-type');
     }
-
-    
-
 });
 
 
@@ -86,7 +88,9 @@ function runGame(gameType) {
 
 }
 
-//Use argument to set max value. perhaps implement a difficulty setting that increases or decreases max
+/**
+ * Generates and returns a random number between 1 and input value.
+ */
 function getRandomValue(max) {
     return Math.floor(Math.random() * max) + 1;
 }
@@ -133,7 +137,6 @@ function checkAnswer() {
         document.getElementById('resultprompts').innerHTML = `You got it <span class="incorrect">wrong</span>! D: The correct answer was ${correctAnswer}`;
     }
 
-    //runGame(calculateCorrectAnswer()[1]);
     setTimeout(() => runGame(calculateCorrectAnswer()[1]), 1500);
 }
 
@@ -150,11 +153,14 @@ function calcScore(correct) {
     }
 }
 
+/**
+ * Calculates and updates the total score based on the time taken to answer the question.
+ */
 function scoreboard() {
     let timeTaken = parseFloat(document.getElementById('stopwatch-display').textContent);
     let score = 0;
     
-    if (timeTaken <= 1.0) score = 1000; 
+    if (timeTaken <= 1.5) score = 1000; 
     else if (timeTaken <= 3.0) score = 100;
     else if (timeTaken <= 7.0) score = 10;
     else score = 1;
@@ -195,15 +201,15 @@ function displayDivideQuestion(op1, op2) {
 
 //Stopwatch Functions
 function startStopwatch() {
-    clearInterval(timerInterval); // Clear any existing interval
-    elapsedTime = 0; // Reset elapsed time
+    clearInterval(timerInterval);   // Clear any existing interval
+    elapsedTime = 0;                // Reset elapsed time
     const stopwatchDisplay = document.getElementById('stopwatch-display');
     stopwatchDisplay.textContent = elapsedTime.toFixed();
 
     timerInterval = setInterval(function() {
         elapsedTime += 0.01;
         stopwatchDisplay.textContent = elapsedTime.toFixed(2);
-    }, 10); // Update every 10 milliseconds for 0.01 second increments
+    }, 10);                         // Update every 10 ms for 0.01 second increments
 }
 
 
