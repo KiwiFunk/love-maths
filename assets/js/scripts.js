@@ -125,6 +125,7 @@ function checkAnswer() {
 
     if(isCorrect) {
         calcScore(isCorrect);
+        scoreboard();
         document.getElementById('resultprompts').innerHTML = 'You got it <span class="correct">right</span>! :D';
     }
     else {
@@ -150,10 +151,16 @@ function calcScore(correct) {
 }
 
 function scoreboard() {
-    //Use the value from the timer to walk through if else if loops to determine score
-    //1000,100,10,1
-    //Add score to a value displayed in html
-    //Total Score: 000000. Display under correct and incorrect
+    let timeTaken = parseFloat(document.getElementById('stopwatch-display').textContent);
+    let score = 0;
+    
+    if (timeTaken <= 1.0) score = 1000; 
+    else if (timeTaken <= 3.0) score = 100;
+    else if (timeTaken <= 7.0) score = 10;
+    else score = 1;
+    
+    let totalScore = parseInt(document.getElementsByClassName('total-score')[0].textContent);
+    document.getElementsByClassName('total-score')[0].textContent = totalScore + score;
 }
 
 //Question Functions
