@@ -1,14 +1,13 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Raleway+Dots&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 /* Variables */
-
 :root {
     --alt-color: #445361;
     --background-color: white;
     --element-color:#E6ECF0;
     --accent-color: #445361;
+    --button-fill: white;
 }
 
 .darkmode {
@@ -16,8 +15,8 @@
     --background-color: #0d1013;
     --element-color: #1c1f22;
     --accent-color: #445361;
+    --button-fill: transparent;
 }
-
 
 /* Global Styles */
 html, body {
@@ -56,7 +55,6 @@ header {
 }
 
 /* Dark Mode Switch */
-
 #theme-switch {
     height: 50px;
     width: 50px;
@@ -112,7 +110,6 @@ main {
     padding: 20px;
 }
     
-
 #question-container {
     /* Hide Until user has selected a game mode */
 }
@@ -220,7 +217,7 @@ main {
 }
 
 .btn-text {
-    margin-top: 10px;
+    margin-top: 14px;
     font-size: 1rem;
     text-transform: uppercase;
     color: var(--alt-color);
@@ -233,7 +230,8 @@ main {
 .btn-big {
     padding-top: 10px;
     border-radius: 50%;
-    background-color: white;
+    /* Button background fill */
+    background-color: var(--button-fill);
     border: 10px solid;
     width: 100px;
     height: 100px;
