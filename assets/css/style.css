@@ -8,12 +8,14 @@
     --alt-color: #445361;
     --background-color: white;
     --element-color:#E6ECF0;
+    --accent-color: #445361;
 }
 
 .darkmode {
     --alt-color: white;
     --background-color: #0d1013;
     --element-color: #1c1f22;
+    --accent-color: #445361;
 }
 
 
@@ -182,7 +184,7 @@ main {
 
 #answer-box {
     border: none;
-    color: var(--alt-color);
+    color: #445361;
     display: inline-block;
     height: 40px;
     width: 80px;
@@ -286,7 +288,7 @@ main {
 
 .btn-grey {
     margin-top: 25px;
-    background-color: var(--alt-color);
+    background-color: var(--accent-color);
     border: 1px transparent;
     border-radius: 20px;
     margin-bottom: 10px;
